@@ -51,18 +51,20 @@ func main() {
 	mux := http.NewServeMux()
 
 	for _, modCfg := range cfg {
+		iso := v8go.NewIsolate() // creates a new JavaScript VM
+		v8Ctx := v8go.NewContext(iso)
+
 		for _, fileCfg := range modCfg.Files {
-			file, err := os.ReadFile(fileCfg.Path)
+			filePath := fmt.Sprintf("funcs/%s/%s", modCfg.Module, fileCfg.Path)
+
+			file, err := os.ReadFile(filePath)
 			if err != nil {
 				fmt.Println(err)
 
 				return
 			}
 
-			iso := v8go.NewIsolate() // creates a new JavaScript VM
-			v8Ctx := v8go.NewContext(iso)
-
-			script, err := iso.CompileUnboundScript(string(file), fileCfg.Path, v8go.CompileOptions{}) // compile script to get cached data
+			script, err := iso.CompileUnboundScript(string(file), filePath, v8go.CompileOptions{}) // compile script to get cached data
 			if err != nil {
 				fmt.Println(err)
 
