@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "9e529796-4c2a-4a49-9bcf-fdbf6ebc90e7",
+		"name": "PoC Front-API Functions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24641827"
+	},
+	"item": [
+		{
+			"name": "Admin Preferences",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/admin-preferences/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin-preferences",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Onboardings",
+			"item": [
+				{
+					"name": "Complete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"onboardingKey\": \"onboarding da home\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/onboarding/complete_onboarding",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onboarding",
+								"complete_onboarding"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Completed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/onboarding/get_completed_onboarding",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onboarding",
+								"get_completed_onboarding"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/admin-preferences/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admin-preferences",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

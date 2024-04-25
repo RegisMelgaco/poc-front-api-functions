@@ -1,0 +1,50 @@
+[
+    {
+        "module": "onboarding",
+        "owner": "SMB",
+        "contact": "regis.andrade@stone.com.br",
+        "max_error_rate": "0.2",
+        "slack": "canal de alertas",
+        "files": [
+            {
+                "path": "funcs/onboarding/funcs.js",
+                "functions": [
+                    {
+                        "name": "completeOnboarding",
+                        "route_path": "/complete_onboarding",
+                        "route_method": "POST"
+                    },
+                    {
+                        "name": "getCompletedOnboardings",
+                        "route_path": "/get_completed_onboarding",
+                        "route_method": "GET"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "module": "admin-preferences",
+        "owner": "SMB",
+        "contact": "regis.andrade@stone.com.br",
+        "max_error_rate": "0.2",
+        "slack": "canal de alertas",
+        "files": [
+            {
+                "path": "funcs/admin-preferences/funcs.js",
+                "functions": [
+                    {
+                        "name": "updatePrefs",
+                        "route_path": "/",
+                        "route_method": "PUT"
+                    },
+                    {
+                        "name": "getPrefs",
+                        "route_path": "/",
+                        "route_method": "GET"
+                    }
+                ]
+            }
+        ]
+    }
+]
