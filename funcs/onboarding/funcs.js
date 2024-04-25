@@ -1,11 +1,11 @@
 const initState  = () => ([]);
 
-function completeOnboarding(payload, state) {
+function completeOnboarding({body}, state) {
     if (!state) {
         state = initState();
     }
 
-    state.push(payload.body.onboardingKey);
+    state.push(body.onboardingKey);
 
     return JSON.stringify(state);
 }

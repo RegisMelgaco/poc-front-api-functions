@@ -1,7 +1,7 @@
 const initState  = () => ({"ui":"TEMPL+HTMX rules"});
 
-function updatePrefs(payload, state) {
-    if (payload.body == null) {
+function updatePrefs({body}, state) {
+    if (body == null) {
         return JSON.stringify(initState());
     }
 
